@@ -1,0 +1,48 @@
+.sun {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, #FFFF00 50%, #FFD700 50%) ;
+    border-radius: 50%;
+    animation: rotate-clockwise 10s linear infinite;
+    animation-play-state: paused;
+}
+
+.sun:hover {
+    cursor: pointer;
+    animation-play-state: running;
+}
+
+.sun::before {
+    content: "";
+    width: 65px;
+    height: 65px;
+    margin: auto;
+    background: linear-gradient(to left, #FFFF00 50%, #FFD700 50%);
+    border-radius: inherit;
+    animation: rotate-anticlockwise 5s linear infinite;
+    animation-play-state: paused;
+}
+
+.sun:hover::before {
+    animation-play-state: running;
+}
+
+@keyframes rotate-clockwise {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes rotate-anticlockwise {
+    from {
+        transform: rotate(359deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
