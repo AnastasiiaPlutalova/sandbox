@@ -7,10 +7,10 @@
     border-radius: 50%;
     animation: rotate-clockwise 10s linear infinite;
     animation-play-state: paused;
+    cursor: pointer;
 }
 
 .sun:hover {
-    cursor: pointer;
     animation-play-state: running;
 }
 

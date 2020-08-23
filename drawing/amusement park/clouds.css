@@ -1,0 +1,55 @@
+/**
+    * width/height = 4 (e.g. 600/150)
+    * brder-radius: 12%/46%
+ **/
+
+.cloud {
+    width: 400px;
+    height: 100px;
+    position: relative;
+    border-radius: 12%/46%; /* important */ 
+    background: linear-gradient(to right, #E6E6FA 50%, #F0F8FF 50%) ;
+    animation: move-cloud 2s linear infinite alternate;
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+.cloud:hover {
+    animation-play-state: running;
+}
+
+.cloud::before {
+    content: "";
+    display: block;
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    top: -45%;
+    left: 50%;
+    transform: translateX(-50%); 
+    margin: 0 auto 30%;
+    border-radius: 12%/46%; /* important */
+    background: linear-gradient(to right, #E6E6FA 50%, #F0F8FF 50%) ;
+}
+
+.cloud::after {
+    content: "";
+    display: block;
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    top: -85%;
+    left: 50%;
+    transform: translateX(-50%); 
+    border-radius: 50%; /* important */ 
+    background: linear-gradient(to right, #E6E6FA 50%, #F0F8FF 50%) ;
+}
+
+@keyframes move-cloud {
+    from {
+        margin-left: -30px;
+    }
+    to {
+        margin-left: 30px;
+    }
+}
